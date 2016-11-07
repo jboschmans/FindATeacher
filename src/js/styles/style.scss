@@ -1,0 +1,39 @@
+$primaryColor: #5CB85C;
+$primaryColorDark: #478947;
+
+.nav-button{
+  border-radius: 10px;
+  background-color: $primaryColor;
+  color: white;
+}
+
+.home-list{
+  h1{
+    margin-bottom: 15px;
+    i{
+      margin-right: 15px;
+    }
+  }
+  ul{
+    margin-left: 150px;
+    li{
+      list-style-type: none;
+      font-size: 120%;
+      i{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.button-primary{
+  background-color: $primaryColorDark;
+  padding: 0px;
+  font:{
+    size: 110%;
+  }
+}
+
+form{
+  margin-top: 15px;
+}

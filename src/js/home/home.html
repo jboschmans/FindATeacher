@@ -1,0 +1,50 @@
+ <div class="home-page">
+
+  <!-- Splash banner that only shows when not logged in -->
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font" ng-bind="::$ctrl.appName | lowercase"></h1>
+      <form ng-submit="$ctrl.search()">
+        <fieldset ng-disabled="$ctrl.isSearching" class="form-group row">
+          <span class="col-xs-1"></span>
+          <input class="form-control col-xs-3"
+            type="text"
+            placeholder="Wat wil je graag leren?"
+            ng-model="$ctrl.searchData.title" />
+          <input class="form-control col-xs-3"
+            type="text"
+            placeholder="Waar wil je dit graag leren?"
+            ng-model="$ctrl.searchData.location" />
+<span class="col-xs-1"></span>
+          <button class="btn col-xs-3 button-primary"
+          type="submit">Zoek</button>
+          <span class="col-xs-1"></span>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="container page">
+
+    <div class="well home-list">
+      <h1><i class="glyphicon glyphicon-thumbs-up"></i>Voordelen als leerling:</h1>
+      <ul>
+        <li><i class="glyphicon glyphicon-ok"></i>Vind snel een leerkracht bij jou in de buurt.</li>
+        <li><i class="glyphicon glyphicon-ok"></i>Kies een leerkracht die naar jou thuis komt, of juist niet.</li>
+        <li><i class="glyphicon glyphicon-ok"></i>Vergelijk de prijzen in jouw buurt en vind de leerkracht die het best bij jou past.</li>
+      </ul>
+    </div>
+
+    <div class="well home-list">
+      <h1><i class="glyphicon glyphicon-thumbs-up"></i>Voordelen als leerkracht:</h1>
+      <ul>
+        <li><i class="glyphicon glyphicon-ok"></i>Word bekeken door potentiële leerlingen die naar een leerkracht als jij op zoek zijn.</li>
+        <li><i class="glyphicon glyphicon-ok"></i>Bepaal zelf je prijs en hoe de lessen worden gegeven, fysiek of via het web.</li>
+        <li><i class="glyphicon glyphicon-ok"></i>Kies hoe je leerlingen je kunnen contacteren.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
