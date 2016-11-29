@@ -93,7 +93,7 @@ gulp.task('default', ['html', 'browserify', 'styles'], function() {
   gulp.watch(jsFiles, ['browserify']);
 });
 
-gulp.task('heroku:production', ['html', 'browserify', 'styles'], function() {
+gulp.task('heroku:production', ['html', 'styles'], function() {
   var html = gulp.src("index.html")
                  .pipe(gulp.dest('./dist/'));
 
