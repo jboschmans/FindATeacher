@@ -93,8 +93,8 @@ gulp.task('default', ['html', 'browserify', 'styles'], function() {
   gulp.watch(jsFiles, ['browserify']);
 });
 
-gulp.task('heroku:production', ['html'], function() {
-  var html = gulp.src("index.html")
+gulp.task('heroku:production', ['html', 'browserify', 'styles'], function() {
+  /*var html = gulp.src("index.html")
                  .pipe(gulp.dest('./dist/'));
 
   var js = gulp.src("main.js")
@@ -102,5 +102,13 @@ gulp.task('heroku:production', ['html'], function() {
                .pipe(gulp.dest('./dist/'));
 
   return merge(html,js);
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");*/
+  browserSync.init(['./build/**/**.**'], {
+    server: "./build",
+    port: 4000,
+    notify: false/*,
+    ui: {
+      port: 4001
+    }*/
+  });
 });
