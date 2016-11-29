@@ -16,6 +16,8 @@ function AppRun(AppConstants, $rootScope) {
     $rootScope.pageTitle += AppConstants.appName;
   };
 
+
+
 }
 
 export default AppRun;
