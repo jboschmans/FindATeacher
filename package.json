@@ -28,6 +28,6 @@
   },
   "scripts": {
     "postinstall": "gulp heroku:production",
-    "start": "node src/js/app.js"
+    "start": "node ./src/js/app.js"
   }
 }
