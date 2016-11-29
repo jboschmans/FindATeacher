@@ -92,3 +92,15 @@ gulp.task('default', ['html', 'browserify', 'styles'], function() {
   gulp.watch(viewFiles, ['views']);
   gulp.watch(jsFiles, ['browserify']);
 });
+
+gulp.task('heroku:production', ['html'], function() {
+  /*var html = gulp.src("build/index.html")
+                 .pipe(gulp.dest('./dist/'));
+
+  var js = gulp.src("build/main.js")
+               .pipe(uglify())
+               .pipe(gulp.dest('./dist/'));
+
+  return merge(html,js);*/
+  console.log("herko!!!!!!!!");
+});

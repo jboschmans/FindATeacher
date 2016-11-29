@@ -27,7 +27,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "gulp default"
+    "build": "gulp",
+    "start": "node app.js"
   }
 }
