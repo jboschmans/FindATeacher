@@ -94,10 +94,10 @@ gulp.task('default', ['html', 'browserify', 'styles'], function() {
 });
 
 gulp.task('heroku:production', ['html'], function() {
-  var html = gulp.src("build/index.html")
+  var html = gulp.src("index.html")
                  .pipe(gulp.dest('./dist/'));
 
-  var js = gulp.src("build/main.js")
+  var js = gulp.src("main.js")
                .pipe(uglify())
                .pipe(gulp.dest('./dist/'));
 
