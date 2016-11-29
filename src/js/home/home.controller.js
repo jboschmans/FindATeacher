@@ -1,14 +1,19 @@
 class HomeCtrl {
-  constructor(AppConstants) {
+  constructor(AppConstants, $state) {
     'ngInject';
 
     this.appName = AppConstants.appName;
+    this.$state = $state;
     this.isSearching = false;
+    this.searchData = {
+      title: "",
+      location: ""
+    };
   }
 
   search(){
     this.isSearching = true;
-    console.log(this.searchData);
+    this.$state.go('app.zoeken', this.searchData);
   }
 }
 

@@ -1,0 +1,22 @@
+<div class="banner">
+  <div class="container">
+    <h1 class="logo-font" ng-bind="$ctrl.appName | lowercase"></h1>
+    <form ng-submit="$ctrl.search()">
+      <fieldset ng-disabled="$ctrl.isSearching" class="form-group row">
+        <span class="col-xs-1"></span>
+        <input class="form-control col-xs-3"
+          type="text"
+          placeholder="Wat wil je graag leren?"
+          ng-model="$ctrl.searchData.title" />
+        <input class="form-control col-xs-3"
+          type="text"
+          placeholder="Waar?"
+          ng-model="$ctrl.searchData.location" />
+<span class="col-xs-1"></span>
+        <button class="btn col-xs-3 button-primary"
+        type="submit">Zoek</button>
+        <span class="col-xs-1"></span>
+      </fieldset>
+    </form>
+  </div>
+</div>

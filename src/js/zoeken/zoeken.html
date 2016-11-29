@@ -1,0 +1,47 @@
+ <div class="home-page">
+
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font" ng-bind="::$ctrl.appName | lowercase"></h1>
+      <form ng-submit="$ctrl.search()">
+        <fieldset ng-disabled="$ctrl.isSearching" class="form-group row">
+          <span class="col-xs-1"></span>
+          <input class="form-control col-xs-3"
+            type="text"
+            placeholder="Wat wil je graag leren?"
+            ng-model="$ctrl.searchData.title" />
+          <input class="form-control col-xs-3"
+            type="text"
+            placeholder="Waar?"
+            ng-model="$ctrl.searchData.location" />
+<span class="col-xs-1"></span>
+          <button class="btn col-xs-3 button-primary"
+          type="submit">Zoek</button>
+          <span class="col-xs-1"></span>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="container page">
+
+    <h1>{{$ctrl.status}}</h1>
+
+    <div class="well"
+      ng-repeat="leerkracht in $ctrl.leerkrachten">
+      <div class="row">
+        <div class="col-xs-9">
+          <h2>{{leerkracht.titel}}</h2>
+          <p>{{leerkracht.plaats}}</p>
+          <h3>{{leerkracht.naam}}</h3>
+        </div>
+        <div class="col-xs-3">
+          <h1>{{leerkracht.prijs}} €/u</h1>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
