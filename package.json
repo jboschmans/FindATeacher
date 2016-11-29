@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Het idee van deze website is dat leerkracht voor privéles zich kunnen inschrijven en dat potentiële studenten een leerkracht bij hun in de buurt kunnen vinden.",
   "author": "Joris Boschmans",
+  "main": "app.js",
   "dependencies": {
     "angular": "^1.5.0-rc.2",
     "angular-ui-router": "^0.2.17",
