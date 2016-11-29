@@ -28,6 +28,6 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "nf start"
+    "start": "node src/js/app.js"
   }
 }
