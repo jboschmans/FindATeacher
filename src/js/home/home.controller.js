@@ -1,14 +1,9 @@
 class HomeCtrl {
-  constructor(AppConstants, $firebaseArray) {
+  constructor(AppConstants) {
     'ngInject';
 
     this.appName = AppConstants.appName;
     this.isSearching = false;
-    console.log(firebase);
-    /*this.data = $firebaseArray(firebase.database().ref());
-    this.data.$loaded().then(res => {
-      console.log(res);
-    });*/
   }
 
   search(){
