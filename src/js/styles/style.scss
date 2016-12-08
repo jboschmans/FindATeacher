@@ -1,6 +1,14 @@
 $primaryColor: #5CB85C;
 $primaryColorDark: #478947;
 
+.no-list-style{
+  list-style-type: none;
+}
+
+.well-zoeken{
+  cursor: pointer;
+}
+
 .nav-button{
   border-radius: 10px;
   background-color: $primaryColor;

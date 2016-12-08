@@ -28,13 +28,14 @@
 
     <h1>{{$ctrl.status}}</h1>
 
-    <div class="well"
+    <div class="well well-zoeken"
       ng-repeat="leerkracht in $ctrl.leerkrachten">
-      <div class="row">
+      <div class="row"
+        ng-click="$ctrl.click(leerkracht.id)">
         <div class="col-xs-9">
           <h2>{{leerkracht.titel}}</h2>
           <p>{{leerkracht.plaats}}</p>
-          <h3>{{leerkracht.naam}}</h3>
+          <h4>{{leerkracht.naam}}</h4>
         </div>
         <div class="col-xs-3">
           <h1>{{leerkracht.prijs}} €/u</h1>

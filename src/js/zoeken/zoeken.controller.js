@@ -18,6 +18,10 @@ class ZoekenCtrl {
     this.zoekData();
   }
 
+  click(id){
+    this.$state.go('app.bekijken', {id: id});
+  }
+
   search(){
     this.isSearching = true;
     this.$state.go('app.zoeken', this.searchData);

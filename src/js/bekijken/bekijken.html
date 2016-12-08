@@ -1,0 +1,66 @@
+<div class="home-page">
+
+ <div class="banner">
+   <div class="container">
+     <h1 class="logo-font" ng-bind="::$ctrl.appName | lowercase"></h1>
+     <form ng-submit="$ctrl.search()">
+       <fieldset ng-disabled="$ctrl.isSearching" class="form-group row">
+         <span class="col-xs-1"></span>
+         <input class="form-control col-xs-3"
+           type="text"
+           placeholder="Wat wil je graag leren?"
+           ng-model="$ctrl.searchData.title" />
+         <input class="form-control col-xs-3"
+           type="text"
+           placeholder="Waar?"
+           ng-model="$ctrl.searchData.location" />
+<span class="col-xs-1"></span>
+         <button class="btn col-xs-3 button-primary"
+         type="submit">Zoek</button>
+         <span class="col-xs-1"></span>
+       </fieldset>
+     </form>
+   </div>
+ </div>
+
+
+ <div class="container page">
+
+   <h1 ng-bind='$ctrl.status'></h1>
+
+   <div class="row">
+     <div class="col-xs-12">
+       <h1 ng-bind='::$ctrl.leerkracht.titel'></h1>
+     </div>
+     <div class="col-xs-9">
+       <h3 ng-bind='::$ctrl.leerkracht.naam'></h3>
+       <p ng-bind='::$ctrl.leerkracht.plaats'></p><br/>
+       <h4>Omschrijving:</h4>
+       <ul class="no-list-style"><li><p ng-bind='::$ctrl.leerkracht.uitleg'></p></li></ul><br/>
+       <h4>Hoe kunnen we afspreken?</h4>
+       <p>
+         <ul class="no-list-style">
+           <li><i ng-show="$ctrl.leerkracht.afspraakManieren.leerkrachtThuis" class="glyphicon glyphicon-ok"></i><i ng-hide="$ctrl.leerkracht.afspraakManieren.leerkrachtThuis" class="glyphicon glyphicon-remove"></i>&nbsp;&nbsp;Bij Leerkracht Thuis</li>
+           <li><i ng-show="$ctrl.leerkracht.afspraakManieren.leerlingThuis" class="glyphicon glyphicon-ok"></i><i ng-hide="$ctrl.leerkracht.afspraakManieren.leerlingThuis" class="glyphicon glyphicon-remove"></i>&nbsp;&nbsp;Bij Leerling Thuis</li>
+           <li><i ng-show="$ctrl.leerkracht.afspraakManieren.videoChat" class="glyphicon glyphicon-ok"></i><i ng-hide="$ctrl.leerkracht.afspraakManieren.videoChat" class="glyphicon glyphicon-remove"></i>&nbsp;&nbsp;Via Videochat</li>
+         </ul>
+       </p><br/>
+       <h4>Contact:</h4>
+       <p>
+         <ul class="no-list-style">
+           <li ng-show="$ctrl.leerkracht.contact.email">E-mail: <a href="mailto:{{$ctrl.leerkracht.contact.email}}">{{$ctrl.leerkracht.contact.email}}</a></li>
+           <li ng-show="$ctrl.leerkracht.contact.telefoon">Telefoon: {{$ctrl.leerkracht.contact.telefoon}}</li>
+           <li ng-show="$ctrl.leerkracht.contact.website">Website: <a target="_blank" href="{{$ctrl.leerkracht.contact.website}}">{{$ctrl.leerkracht.contact.website}}</a></li>
+         </ul>
+       </p>
+     </div>
+     <div class="col-xs-3">
+       <h1 ng-bind='::$ctrl.leerkracht.prijsString'></h1>
+     </div>
+   </div>
+
+
+
+ </div>
+
+</div>
