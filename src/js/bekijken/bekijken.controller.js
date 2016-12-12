@@ -10,7 +10,7 @@ class BekijkenCtrl {
       title: "",
       location: ""
     };
-    $stateParams.id = "583d51e4dcba0f55bd9efc5e"; // Enkel om te testen !!!
+    //$stateParams.id = "583d51e4dcba0f55bd9efc5e"; // Enkel om te testen !!!
     if (!$stateParams.id || $stateParams.id.length < 1) this.status = "Er is een fout opgetreden";
     else {
       $http({
@@ -25,6 +25,24 @@ class BekijkenCtrl {
         }
       );
     }
+
+    $http({
+      method: 'POST',
+      url: AppConstants.api + "insert",
+      data: {
+        naam: "Ladida",
+        straat: "rue",
+        plaats: "Gent"
+      }
+    }).then(
+      res => {
+        console.log("res.data");
+      },
+      err => {
+        console.log("failed");
+      }
+    );
+
   }
 
   search(){

@@ -5,6 +5,13 @@ $primaryColorDark: #478947;
   list-style-type: none;
 }
 
+.banner{
+  background-color: $primaryColor;
+  h1{
+    font-size: 56px;
+  }
+}
+
 .well-zoeken{
   cursor: pointer;
 }

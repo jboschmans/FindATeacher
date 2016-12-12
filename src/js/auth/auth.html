@@ -1,0 +1,121 @@
+<div class="auth-page">
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font" ng-bind="::$ctrl.title | lowercase"></h1>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-9 col-xs-12">
+        <form ng-submit="$ctrl.submit()">
+          <fieldset ng-disabled="$ctrl.isSubmitting">
+
+            <fieldset class="form-group" ng-show="$ctrl.title === 'Registreren'">
+              <input class="form-control"
+                type="text"
+                placeholder="Volledige naam"
+                ng-model="$ctrl.submitData.naam">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                type="email"
+                placeholder="Email"
+                ng-model="$ctrl.submitData.email">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input class="form-control"
+                type="password"
+                placeholder="Wachtwoord"
+                ng-model="$ctrl.submitData.wachtwoord">
+            </fieldset>
+
+            <fieldset class="form-group" ng-show="$ctrl.title === 'Registreren'">
+              <input class="form-control"
+                type="password"
+                placeholder="Wachtwoord (controle)"
+                ng-model="$ctrl.submitData.wachtwoord2">
+            </fieldset>
+
+            <fieldset class="well" ng-show="$ctrl.title === 'Registreren'">
+
+              <h4>Uw advertentie</h4>
+
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="text"
+                  placeholder="Titel"
+                  ng-model="$ctrl.submitData.titel">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="text"
+                  placeholder="Plaats"
+                  ng-model="$ctrl.submitData.plaats">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <textarea class="form-control"
+                  rows="5"
+                  placeholder="Beschrijving van uw advertentie"
+                  ng-model="$ctrl.submitData.uitleg"></textarea>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="number"
+                  placeholder="Prijs per uur"
+                  ng-model="$ctrl.submitData.prijs">
+              </fieldset><br/>
+
+              <fieldset class="form-group">
+                <h5>Hoe wilt u afspreken met een leerling? (Minstens één aanduiden)</h5>
+                <div class="checkbox">
+                  <label><input type="checkbox"
+                    ng-model="$ctrl.submitData.leerkrachtThuis"> Bij u thuis <br/></label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox"
+                    ng-model="$ctrl.submitData.leerlingThuis"> Bij leerling thuis <br/></label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox"
+                    ng-model="$ctrl.submitData.videochat"> Via videochat <br/></label>
+                </div>
+              </fieldset><br/>
+
+              <h5>Hoe wilt u dat een leerling met u contact opneemt? (Minstens één invullen)</h5>
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="email"
+                  placeholder="Email"
+                  ng-model="$ctrl.submitData.contactEmail">
+              </fieldset>
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="tel"
+                  placeholder="Telefoon"
+                  ng-model="$ctrl.submitData.contactTelefoon">
+              </fieldset>
+              <fieldset class="form-group">
+                <input class="form-control"
+                  type="url"
+                  placeholder="Website"
+                  ng-model="$ctrl.submitData.contactWebsite">
+              </fieldset>
+
+            </fieldset>
+
+            <button class="btn btn-primary"
+              type="submit"
+              ng-bind="::$ctrl.title"></button>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
