@@ -8,6 +8,7 @@ class AuthCtrl{
     this.isSubmitting = false;
     this.errors = [];
     this.submitData = {
+      naam: "",
       email: "",
       wachtwoord: "",
       wachtwoord2: "",
@@ -49,7 +50,7 @@ class AuthCtrl{
       if (!this.submitData.email || this.submitData.email.length < 1) e.push("Gelieve een emailadres in te vullen");
       if (!this.submitData.wachtwoord || this.submitData.wachtwoord.length < 6) e.push("Gelieve een wachtwoord van minstens 6 karakters in te vullen");
     } else if (this.title === "Registreren"){
-      if (!this.submitData.name || this.submitData.name.length < 1) e.push("Gelieve uw naam in te vullen");
+      if (!this.submitData.naam || this.submitData.naam.length < 1) e.push("Gelieve uw naam in te vullen");
       if (!this.submitData.email || this.submitData.email.length < 1) e.push("Gelieve een emailadres in te vullen");
       if (!this.submitData.wachtwoord || this.submitData.wachtwoord.length < 6) e.push("Gelieve een wachtwoord van minstens 6 karakters in te vullen");
       else if (!this.submitData.wachtwoord2 || this.submitData.wachtwoord2.length < 6) e.push("Gelieve een controlewachtwoord in te vullen");
