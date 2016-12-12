@@ -8,6 +8,9 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-9 col-xs-12">
+        <div ng-repeat="err in $ctrl.errors">
+          <p class="errorStyle">{{err}}</p>
+        </div>
         <form ng-submit="$ctrl.submit()">
           <fieldset ng-disabled="$ctrl.isSubmitting">
 
