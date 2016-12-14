@@ -14,7 +14,7 @@
         <form ng-submit="$ctrl.submit()">
           <fieldset ng-disabled="$ctrl.isSubmitting">
 
-            <fieldset class="form-group" ng-show="$ctrl.title === 'Registreren'">
+            <fieldset class="form-group" ng-hide="$ctrl.title === 'Aanmelden'">
               <input class="form-control"
                 type="text"
                 placeholder="Volledige naam"
@@ -35,14 +35,14 @@
                 ng-model="$ctrl.submitData.wachtwoord">
             </fieldset>
 
-            <fieldset class="form-group" ng-show="$ctrl.title === 'Registreren'">
+            <fieldset class="form-group" ng-hide="$ctrl.title === 'Aanmelden'">
               <input class="form-control"
                 type="password"
                 placeholder="Wachtwoord (controle)"
                 ng-model="$ctrl.submitData.wachtwoord2">
             </fieldset>
 
-            <fieldset class="well" ng-show="$ctrl.title === 'Registreren'">
+            <fieldset class="well" ng-hide="$ctrl.title === 'Aanmelden'">
 
               <h4>Uw advertentie</h4>
 

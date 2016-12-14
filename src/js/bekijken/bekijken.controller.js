@@ -19,7 +19,7 @@ class BekijkenCtrl {
       }).then(
         res => {
           this.status = "";
-          this.leerkracht = res.data[0];
+          this.leerkracht = res.data;
           if (!this.leerkracht) this.status = "Er is een fout opgetreden";
           this.leerkracht.prijsString = this.leerkracht.prijs + " €/u";
         }

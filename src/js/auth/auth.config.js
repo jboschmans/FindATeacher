@@ -15,6 +15,13 @@ function AuthConfig($stateProvider){
     controller: 'AuthCtrl as $ctrl',
     templateUrl: 'auth/auth.html',
     title:'Aanmelden'
+  })
+
+  .state('app.aangemeld', {
+    url: '/aangemeld',
+    controller: 'AuthCtrl as $ctrl',
+    templateUrl: 'auth/auth.html',
+    title: 'Advertentie aanpassen'
   });
 }
 
