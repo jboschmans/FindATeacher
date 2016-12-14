@@ -7,6 +7,8 @@ let servicesModule = angular.module('app.services', []);
 import UserService from "./user.service";
 servicesModule.service("User", UserService);
 
+import ApiService from "./api.service";
+servicesModule.service("Api", ApiService);
 
 
 export default servicesModule;

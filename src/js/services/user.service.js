@@ -9,6 +9,7 @@ export default class User{
   }
 
   // Try to authenticate by registering or logging in
+  /*
   attemptAuth(type, credentials){
     let route = (type === "login") ? "/login" : "";
     return this.$http({
@@ -25,6 +26,6 @@ export default class User{
         return res;
       }
     );
-  }
+  }*/
 
 }

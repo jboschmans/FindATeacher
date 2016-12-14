@@ -29,6 +29,18 @@ class ZoekenCtrl {
 
   zoekData(){
     if (!this.$stateParams.location || !this.$stateParams.title) this.status = "Er is iets fout gelopen, gelieve opnieuw te zoeken.";
+
+    /*this.$http({
+      url: 'https://api.mlab.com/api/1/databases/jorisboschmans-mydb/collections/findateacherserver?apiKey=RQtq7YLKM48Vm5xnUTi-YdZ8iso66f5M&q={"plaats":'+this.$stateParams.location+',"titel":'+this.$stateParams.title+'}',
+      method: "GET"
+    }).then(res => {
+      console.log(res.data);
+    }, err => {
+      console.log(err);
+    });*/
+
+
+
     this.$http({
       method: "GET",
       url: this.api + "search/" + this.$stateParams.location + "/" + this.$stateParams.title

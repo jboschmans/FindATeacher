@@ -1,8 +1,10 @@
 class AuthCtrl{
-  constructor($state, $window){
+  constructor($state, $window, $http, AppConstants){
     'ngInject';
 
     this.$window = $window;
+    this.$http = $http;
+    this.AppConstants = AppConstants;
 
     this.title = $state.current.title;
     this.isSubmitting = false;
@@ -27,7 +29,7 @@ class AuthCtrl{
 
   submit(){
     this.isSubmitting = true;
-    console.log(this.submitData);
+    //console.log(this.submitData);
 
     this.errors = this.validate();
 
@@ -37,10 +39,13 @@ class AuthCtrl{
       return;
     }
 
-    if (this.title === "Aanmelden") this.aanmelden();
-    else if (this.title === "Registreren") this.registreren();
+    if (this.title === "Aanmelden") {
+      this.aanmelden();
+    }else if (this.title === "Registreren") {
+      this.registreren();
+    }
 
-    this.isSubmitting = false;
+    //this.isSubmitting = false;
   }
 
   validate(){
@@ -69,11 +74,62 @@ class AuthCtrl{
   }
 
   aanmelden(){
-    console.log("Aanmelden");
+    this.$http({
+      url: this.AppConstants.api + "login/" + this.submitData.email,
+      method: 'GET'
+    }).then(
+      res => {
+        if (!res.data.email) this.errors.push("Het ingegeven emailadres heeft geen account");
+        else if (res.data.wachtwoord !== this.submitData.wachtwoord) this.errors.push("Het ingegeven wachtwoord is niet correct");
+        else {
+          // TODO doorverwijzen naar aangemeld pagina
+          // + id opvragen via server en bijhouden in user service
+        }
+        this.isSubmitting = false;
+      },
+      err => {
+        this.errors.push("Er is iets fout gelopen");
+      }
+    );
   }
 
   registreren(){
-    console.log("Registreren");
+    var obj = {
+      id: this.hashCode(),
+      naam: this.submitData.naam,
+      email: this.submitData.email,
+      wachtwoord: this.submitData.wachtwoord,
+      plaats: this.submitData.plaats,
+      titel: this.submitData.titel,
+      uitleg: this.submitData.uitleg,
+      prijs: this.submitData.prijs,
+      afspraakManieren: {
+        leerkrachtThuis: this.submitData.leerkrachtThuis,
+        leerlingThuis: this.submitData.leerlingThuis,
+        videochat: this.submitData.videochat
+      },
+      contact: {
+        email: this.submitData.contactEmail,
+        telefoon: this.submitData.contactTelefoon,
+        website: this.submitData.contactWebsite
+      }
+    };
+
+    this.$http({
+      url: this.AppConstants.restApi,
+      data: JSON.stringify(obj),
+      method: 'POST',
+      contentType: "application/json"
+    }).then(
+      res => {
+        console.log("success");
+        this.isSubmitting = false;
+      }, err => {console.log(err);}
+    );
+  }
+
+  hashCode(){
+    return Math.random().toString(36).substring(2, 12);
   }
 }
 

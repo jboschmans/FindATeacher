@@ -26,23 +26,6 @@ class BekijkenCtrl {
       );
     }
 
-    $http({
-      method: 'POST',
-      url: AppConstants.api + "insert",
-      data: {
-        naam: "Ladida",
-        straat: "rue",
-        plaats: "Gent"
-      }
-    }).then(
-      res => {
-        console.log("res.data");
-      },
-      err => {
-        console.log("failed");
-      }
-    );
-
   }
 
   search(){
