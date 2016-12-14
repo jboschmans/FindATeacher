@@ -14,6 +14,7 @@ class AuthCtrl{
 
     if (this.title === "Advertentie aanpassen"){
       // Controle aangemeld
+      this.isSubmitting = true;
       if (!this.User.currentID) this.$state.go('app.login');
       else {
         this.$http({
@@ -42,6 +43,7 @@ class AuthCtrl{
                 contactTelefoon: res.data.contact.telefoon
               }
             }
+            this.isSubmitting = false;
           },
           err => {
             this.errors.push("Er is iets misgelopen");

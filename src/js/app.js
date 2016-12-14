@@ -34,6 +34,13 @@ const requires = [
 // Mount on window for testing
 window.app = angular.module('app', requires);
 
+window.app.directive('searchBanner', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'directives/banner.html'
+  };
+});
+
 angular.module('app').constant('AppConstants', constants);
 
 angular.module('app').config(appConfig);
