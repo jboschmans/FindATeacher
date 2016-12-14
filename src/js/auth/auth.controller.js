@@ -128,10 +128,8 @@ class AuthCtrl{
         else if (res.data.wachtwoord !== this.submitData.wachtwoord) this.errors.push("Het ingegeven wachtwoord is niet correct");
         else {
           this.User.currentID = res.data.id;
+          this.User.setStorage(res.data.id);
           this.$state.go('app.aangemeld');
-
-          // TODO doorverwijzen naar aangemeld pagina
-          // + id opvragen via server en bijhouden in user service
         }
         this.isSubmitting = false;
       },
@@ -139,6 +137,12 @@ class AuthCtrl{
         this.errors.push("Er is iets fout gelopen");
       }
     );
+  }
+
+  afmelden(){
+    this.User.deleteStorage();
+    this.User.currentID = null;
+    this.$state.go('app.home');
   }
 
   registreren(){

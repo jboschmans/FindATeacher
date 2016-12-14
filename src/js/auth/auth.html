@@ -116,6 +116,10 @@
               type="submit"
               ng-bind="::$ctrl.title"></button>
 
+            <button class="btn btn-danger pull-xs-right"
+              ng-show="$ctrl.title === 'Advertentie aanpassen'"
+              ng-click="$ctrl.afmelden()">Afmelden</button>
+
           </fieldset>
         </form>
       </div>
