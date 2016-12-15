@@ -1,5 +1,25 @@
 $primaryColor: #5CB85C;
 $primaryColorDark: #478947;
+$maxWidth: 768px;
+
+@media screen and (max-width: $maxWidth){
+  .banner-form{
+    input, button{
+      margin-top: 1px;
+    }
+    button{
+      padding:{
+        top: 5px;
+        bottom: 5px;
+      }
+    }
+  }
+  .well-zoeken, .bekijken-style{
+    h1{
+      font-size: 24px;
+    }
+  }
+}
 
 .errorStyle{
   color: red;
@@ -37,6 +57,9 @@ $primaryColorDark: #478947;
   }
   ul{
     margin-left: 150px;
+    @media screen and (max-width: $maxWidth){
+      margin-left: 0px;
+    }
     li{
       list-style-type: none;
       font-size: 120%;

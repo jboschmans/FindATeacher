@@ -1,5 +1,5 @@
 class HomeCtrl {
-  constructor(AppConstants, $state) {
+  constructor(AppConstants, $state, $window) {
     'ngInject';
 
     this.appName = AppConstants.appName;
@@ -9,6 +9,7 @@ class HomeCtrl {
       title: "",
       location: ""
     };
+    $window.scrollTo(0,0);
   }
 
   search(){
