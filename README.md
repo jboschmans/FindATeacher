@@ -3,3 +3,6 @@ Het idee van deze website is dat leerkracht voor privéles zich kunnen inschrijv
 
 # Online
 Deze website kan u online bekijken via: http://findateacher.atwebpages.com
+
+# Data
+De huidige data om op te zoeken is 'koken' in 'gent', en 'Nederlands' in 'gent'.
